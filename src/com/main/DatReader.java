@@ -37,11 +37,11 @@ public class DatReader {
             DatItem item = new DatItem();
             item.id = id;
 
-            int optByte;
+            int atributo;
             do {
-                optByte = reader.readByte();
+                atributo = reader.readByte();
 
-                switch (optByte) {
+                switch (atributo) {
                     case 0x00: //groundtile
                         item.groundSpeed = reader.readUInt16();
                         item.type = DatItem.ItemType.Ground;
@@ -188,7 +188,7 @@ public class DatReader {
                         System.err.println("DEU ERROP");
                         return;
                 }
-            } while (optByte != 0xFF);
+            } while (atributo != 0xFF);
 
             item.width = reader.readByte();
             item.height = reader.readByte();
