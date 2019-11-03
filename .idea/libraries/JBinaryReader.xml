@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="JBinaryReader">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/JBinaryReader.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
