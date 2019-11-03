@@ -30,8 +30,8 @@ public class SprReader {
         offsetDesejado = reader.getPosition() + reader.readUInt16();
 
         while (reader.getPosition() < offsetDesejado){
-            long pixelsTransparentes = reader.readUInt16();
-            long pixelsColoridos = reader.readUInt16();
+            int pixelsTransparentes = reader.readUInt16();
+            int pixelsColoridos = reader.readUInt16();
             pixelAtual += pixelsTransparentes;
             for (int i = 0; i < pixelsColoridos; i++) {
                 img.setRGB(
@@ -53,11 +53,17 @@ public class SprReader {
 
     @Deprecated
     private static int rgbToArgb(int red, int green, int blue) {
-        red = (red << 16) & 0x00FF0000; //Shift red 16-bits and mask out other stuff
-        green = (green << 8) & 0x0000FF00; //Shift green 8-bits and mask out other stuff
-        blue = blue & 0x000000FF; //Mask out anything not blue.
+        //Shift red 16-bits and mask out other stuff
+        red = (red << 16) & 0x00FF0000;
 
-        return 0xFF000000 | red | green | blue; //0xFF000000 for 100% Alpha. Bitwise OR everything together.
+        //Shift green 8-bits and mask out other stuff
+        green = (green << 8) & 0x0000FF00;
+
+        //Mask out anything not blue.
+        blue = blue & 0x000000FF;
+
+        //0xFF000000 for 100% Alpha. Bitwise OR everything together.
+        return 0xFF000000 | red | green | blue;
     }
 
     private static BufferedImage rawImage(int w, int h) {
