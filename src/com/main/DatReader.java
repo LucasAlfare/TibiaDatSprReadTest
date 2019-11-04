@@ -260,6 +260,7 @@ public class DatReader {
                 splashList.add(item);
             }
         }
+
         return splashList.toArray(new DatItem[splashList.size()]);
     }
 }
