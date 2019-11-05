@@ -38,6 +38,7 @@ public class DatReader {
             item.id = id;
 
             int atributo;
+
             do {
                 atributo = reader.readByte();
 
@@ -230,6 +231,7 @@ public class DatReader {
                 groundsList.add(item);
             }
         }
+
         return groundsList.toArray(new DatItem[groundsList.size()]);
     }
 

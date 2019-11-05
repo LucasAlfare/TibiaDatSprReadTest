@@ -38,11 +38,11 @@ public class SprReader {
                         pixelAtual % 32,
                         pixelAtual / 32,
                         new Color(
-                                //rgbToArgb(
+                                rgbToArgb(
                                         reader.readByte(),
                                         reader.readByte(),
                                         reader.readByte()
-                                //)
+                                )
                         ).getRGB());
                 pixelAtual++;
             }
@@ -51,7 +51,6 @@ public class SprReader {
         return img;
     }
 
-    @Deprecated
     private static int rgbToArgb(int red, int green, int blue) {
         //Shift red 16-bits and mask out other stuff
         red = (red << 16) & 0x00FF0000;
@@ -74,7 +73,7 @@ public class SprReader {
                 .createCompatibleImage(
                         w,
                         h,
-                        BufferedImage.TYPE_INT_RGB
+                        BufferedImage.TYPE_INT_ARGB
                 );
     }
 }

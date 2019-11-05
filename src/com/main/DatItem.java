@@ -73,7 +73,7 @@ public class DatItem {
         r += "- Minimap color: " + minimapColor + ";\n";
         r += "- Look through: " + lookThrough + ";\n";
         r += "- Width: " + width + ";\n";
-        r += "- heigth: " + height + ";\n";
+        r += "- Heigth: " + height + ";\n";
         r += "- Frames: " + frames + ";\n";
         r += "- X div: " + xdiv + ";\n";
         r += "- Y div: " + ydiv + ";\n";
@@ -81,7 +81,7 @@ public class DatItem {
         r += "- Animation length: " + animationLength + ";\n";
         r += "- Is stackable: " + isStackable + ";\n";
         r += "- Number of sprites: " + numSprites + ";\n";
-        r += "- Sprite list (sprite addresses values): " + spriteList + ".\n";
+        r += "- Sprite list (sprite addresses values): \n\t" + spriteList + ".\n";
 
         return r;
     }
