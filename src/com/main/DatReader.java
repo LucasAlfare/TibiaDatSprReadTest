@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class DatReader {
 
     private byte[] datBytes;
-    private JBinaryReader reader;
     private DatItem[] items;
 
     public DatReader(byte[] datBytes){
@@ -14,7 +13,7 @@ public class DatReader {
     }
 
     private void load(){
-        reader = new JBinaryReader(datBytes);
+        JBinaryReader reader = new JBinaryReader(datBytes);
 
         long signature = reader.readUInt32();
         System.out.println(String.format("Current dat file signature: %s.", signature));
