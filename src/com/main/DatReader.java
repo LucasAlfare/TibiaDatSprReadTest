@@ -125,10 +125,12 @@ public class DatReader {
 
                     case 0x12: //horizontal wall
                         item.isHorizontal = true;
+                        item.type = DatItem.ItemType.Wall;
                         break;
 
                     case 0x13: //vertical wall
                         item.isVertical = true;
+                        item.type = DatItem.ItemType.Wall;
                         break;
 
                     case 0x14: //rotatable
@@ -266,5 +268,16 @@ public class DatReader {
         }
 
         return splashList.toArray(new DatItem[splashList.size()]);
+    }
+
+    public DatItem[] getWallItems(){
+        ArrayList<DatItem> wallList = new ArrayList<>();
+        for (DatItem item : getItems()){
+            if (item != null && item.type == DatItem.ItemType.Wall){
+                wallList.add(item);
+            }
+        }
+
+        return wallList.toArray(new DatItem[wallList.size()]);
     }
 }
