@@ -33,9 +33,8 @@ public class Test extends JFrame {
 
         DatReader datReader =
                 new DatReader(
-                        new JBinaryReader(
-                                Files.readAllBytes(
-                                        Paths.get("src/assets/tibia-8.6.dat"))));
+                        Files.readAllBytes(
+                                Paths.get("src/assets/tibia-8.6.dat")));
 
         JTextField field = new JTextField();
         field.setPreferredSize(new Dimension(20, 15));
