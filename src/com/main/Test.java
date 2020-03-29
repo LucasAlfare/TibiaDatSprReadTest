@@ -10,6 +10,12 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * Essa classe aqui fiz só pra testar
+ *
+ * Basicamente a gente escreve um ID e no componente da esquerda
+ * deve ser mostrado o item correspondente...
+ */
 public class Test extends JFrame {
 
     private int genPos;
@@ -17,7 +23,7 @@ public class Test extends JFrame {
     private DatItem currItem;
 
     private Test() throws IOException {
-        setSize(150, 120);
+        setSize(200, 120);
         setDefaultCloseOperation(3);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
@@ -35,18 +41,19 @@ public class Test extends JFrame {
                         Files.readAllBytes(
                                 Paths.get("src/assets/tibia-8.6.dat")));
 
+        JOptionPane.showMessageDialog(null, "Foram carregados [" + datReader.getItems().length + "] items do DAT 8.60. Era pra ter mais itens?");
+
         JTextField field = new JTextField();
-        field.setPreferredSize(new Dimension(20, 15));
+        field.setPreferredSize(new Dimension(50, 15));
 
         items = datReader.getItems();
-        JButton b = new JButton("Draw");
+        JButton b = new JButton("Desenhar!");
         b.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 genPos = field.getText().isEmpty() ? r.nextInt(items.length) : Integer.parseInt(field.getText());
                 currItem = items[genPos];
                 repaint();
-                //System.out.println(currItem);
             }
         });
 
@@ -75,43 +82,9 @@ public class Test extends JFrame {
 
     public static void main(String[] args) throws IOException {
         new Test();
-
-        /*
-        ESCREVENDO:
-
-        - Converter a informação que quer para UM array de bytes;
-            - A informação pode ser qualquer tipo;
-        - Escrever cada informação (cada array) no arquivo;
-         */
-
-//        File f = new File("src/com/main/teste.buaa");
-//        FileOutputStream stream = new FileOutputStream(f);
-//
-//        stream.write(toBytes(181094));
-//        stream.write(toBytes(1234));
-//        stream.write(toBytes(5678));
-//        stream.write(toBytes(181094));
-//        stream.close();
-
-        /*
-        LENDO:
-
-        - Converter arqivo para array de bytes;
-        - Realizar leitura de acordo como foi escrito;
-            - Se foi adicionado um array de bytes que contém 2
-            elementos, então deverão ser lidos 2 elementos aqui
-            e depois esses elementos deverão ser convertidos de
-            volta para o tipo do qual vieram para que a informação
-            possa fazer sentido;
-         */
-//        byte[] arr2 = Files.readAllBytes(Paths.get("src/com/main/teste.bua"));
-//        JBinaryReader reader = new JBinaryReader(arr2);
-//        System.out.println(reader.readInt32());
-//        System.out.println(reader.readInt32());
-//        System.out.println(reader.readInt32());
-//        System.out.println(reader.readInt32());
     }
 
+    @Deprecated
     private static byte[] toBytes(int i) {
         byte[] aBuffer = new byte[4];
 

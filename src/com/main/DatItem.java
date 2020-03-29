@@ -2,23 +2,31 @@ package com.main;
 
 import java.util.ArrayList;
 
-//fields for 8.6 dat structure
+/**
+ * Esses campos parecem respeitar a estrutura
+ * do tibia 8.60
+ *
+ *
+ */
 @SuppressWarnings("ALL")
 public class DatItem {
 
     public static final class ItemAtributesFlags {
 
-        //Esses números representam coisas que um
-        //item pode ter. Esses números poderão ser
-        //encontrados dentro do OFFSET de um item
-        //que esteja dentro de um item, logo, caso
-        //o número apareça, significará que o item
-        //terá atribudos relacionados a ele.
-        //
-        //Algumas flags indicam que um ou mais valores
-        //seguintes também deverão ser lidos para
-        //a devida construção de um campo do objeto
-        //item em questão.
+
+        /**
+         * Esses números representam coisas que um
+         * item pode ter. Esses números poderão ser
+         * encontrados dentro do OFFSET de um item
+         * que esteja dentro de um item, logo, caso
+         * o número apareça, significará que o item
+         * terá atribudos relacionados a ele.
+         *
+         * Algumas flags indicam que um ou mais valores
+         * seguintes também deverão ser lidos para
+         * a devida construção de um campo do objeto
+         * item em questão.
+         */
         public static final int
 
                 /**
@@ -162,6 +170,11 @@ public class DatItem {
     public int numSprites;
     public ArrayList<Integer> spriteList;
 
+    /**
+     * Sobescrevi o toString pra debug...
+     *
+     * @return lalalala
+     */
     @Override
     public String toString() {
         String r = "Item " + id + " atributes:\n";

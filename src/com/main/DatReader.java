@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class DatReader {
 
     private byte[] datBytes;
-    private DatItem[] items;
+    private DatItem[] items; //poderia ser estático? :(
 
     public DatReader(byte[] datBytes){
         this.datBytes = datBytes;
@@ -227,6 +227,16 @@ public class DatReader {
         }
         return items;
     }
+
+    /*
+    --------------------------------------------
+    Esses métodos abaixo fiz só pra testar, n sei
+    poderiam ser usados assim num contexto real,
+    mas provavelmente não.........
+
+    de qualquer forma, com Kotlin daria pra montar
+    uns filtros mais interessantes
+     */
 
     public DatItem[] getGroundItems(){
         ArrayList<DatItem> groundsList = new ArrayList<>();

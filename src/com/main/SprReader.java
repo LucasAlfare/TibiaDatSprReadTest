@@ -8,7 +8,7 @@ public class SprReader {
     //bytes do arquivo tibia.spr
     private byte[] sprBytes;
 
-    //leitor estilo C#
+    //leitor estilo C# que fiz, tem repositório dele
     private JBinaryReader reader;
 
     public SprReader(byte[] bytes) {
@@ -51,6 +51,7 @@ public class SprReader {
         return img;
     }
 
+    //achei esse código na net...
     private static int rgbToArgb(int red, int green, int blue) {
         //Shift red 16-bits and mask out other stuff
         red = (red << 16) & 0x00FF0000;
