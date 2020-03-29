@@ -15,6 +15,10 @@ import java.util.Random;
  *
  * Basicamente a gente escreve um ID e no componente da esquerda
  * deve ser mostrado o item correspondente...
+ *
+ * Eu testei com alguns IDs desse link e aparentemente tudo certo:
+ *
+ * https://tibia.fandom.com/wiki/Item_IDs
  */
 public class Test extends JFrame {
 
